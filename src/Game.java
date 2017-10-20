@@ -4,7 +4,6 @@ import scoreCalculatorPackage.IScoreCalculator;
 import java.util.ArrayList;
 
 class Game {
-
     // region class Game declared as a Singleton
     private static Game instance = new Game();
     private Game() {
