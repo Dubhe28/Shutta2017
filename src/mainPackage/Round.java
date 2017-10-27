@@ -12,17 +12,6 @@ class Round {
         return _winner;
     }   // getter
 
-    void setWinner(Player p1, Player p2) {   //setter, 두 플레이어를 인자로 받아 _winner 변수에 승패를 저장한다.
-        if (p1.getSuit().getScore()>p2.getSuit().getScore())    // 만약 첫 번째 플레이어가 두 번째 플레이어보다 높은 점수이면
-            _winner = Winner.PlayerA;       // 첫 번째 플레이어가 승자이다.
-        else if (p1.getSuit().getScore()<p2.getSuit().getScore())   // 만약 두 번째 플레이어가 첫 번째 플레이어보다 높은 점수이면
-            _winner = Winner.PlayerB;       // 두 번째 플레이어가 승자이다.
-        else                                // 만약 두 플레이어가 동점이면
-            _winner = Winner.None;          // 승자가 없으므로 무승부이다.
-        _roundNum ++;   // 승자가 결정되면 정적 변수 _roundNum 값을 하나 증가시킨다.
-
-    }
-
     //endregion
     void printRound(Player p1, Player p2) {
         System.out.println("************************* " + _roundNum + "번째 게임입니다 *************************");
