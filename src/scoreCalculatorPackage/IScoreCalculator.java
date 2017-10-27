@@ -1,7 +1,7 @@
 package scoreCalculatorPackage;
-import playerPackage.Player;
+import cardPackage.Suit;
 
 public interface IScoreCalculator {
 
-    void calculateScore(Player player);
+    void calculateScore(Suit suit);
 }

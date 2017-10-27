@@ -1,10 +1,9 @@
-import playerPackage.Player;
-import scoreCalculatorPackage.IScoreCalculator;
+package mainPackage;
 
 import java.util.ArrayList;
 
 class Game {
-    // region class Game declared as a Singleton
+    // region class mainPackage.Game declared as a Singleton
     private static Game instance = new Game();
     private Game() {
     }
@@ -19,19 +18,6 @@ class Game {
         _rounds.add(round);
     }   // ROUND 변수를 인자로 받아서 ArrayList<>에 저장하는 메소드이다.
 
-    // 게임의 점수 계산 방법을 두 가지 방법으로 구현하기 위해 Strategy 디자인 패턴을 사용하였다.
-    private IScoreCalculator _scoreCalculator;
-
-    void setStrategy(IScoreCalculator value)
-    {
-        _scoreCalculator = value;
-    }
-
-    void calculate(Player p)
-    {
-        _scoreCalculator.calculateScore(p);
-    }
-
 
     void printGameRecord()  // 최종 승자가 정해지고 게임이 완전히 끝나면 각 플레이어의 승률과 총 게임수, 최종 승자를 출력한다.
     {
@@ -45,7 +31,7 @@ class Game {
         int[] statistics = doStatistics(); // scoresInfo 배열에 각 플레이어의 승률을 퍼센트로 저장한다.
         int tiedStat = 100-statistics[0]-statistics[1]; // 전체 게임 중에서 무승부였던 확률을 퍼센트로 저장한다.
         return " [ Winner: "+getFinalWinner()+" ] (total " + getRoundsSize()                // 정보를 담고 있는 문자열 반환한다.
-                + " games) playerPackage A : "+ statistics[0] + "%, playerPackage B : "+ statistics[1]
+                + " games) player A : "+ statistics[0] + "%, player B : "+ statistics[1]
                 +"%, Tied : " + tiedStat+"%";
     }
 

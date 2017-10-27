@@ -2,13 +2,15 @@ package cardPackage;
 
 public class Card {
 
+    public Card(int _num, boolean _gwang) {
+        this._num = _num;
+        this._gwang = _gwang;
+    }
+
     //region int _num
     private int _num;   // 카드의 번호를 저장.
     public int getNum() {
         return _num;
-    }
-    void setNum(int num) {
-        _num = num;
     }
     //endregion
 
@@ -16,9 +18,6 @@ public class Card {
     private boolean _gwang; // 카드가 광 카드인지 아닌지를 저장.
     public boolean getGwang() {
         return _gwang;
-    }
-    void setGwang(boolean gwang) {
-        _gwang = gwang;
     }
     //endregion
 

@@ -1,35 +1,32 @@
 package scoreCalculatorPackage;
-
-import cardPackage.Card;
-import playerPackage.Player;
+import cardPackage.Suit;
 
 public class TieScoreCalculator implements IScoreCalculator {
-    private Card _card1;
-    private Card _card2;
 
-    public void calculateScore(Player player){
+    private Suit _suit;
 
-        _card1 = player.getCard1();
-        _card2 = player.getCard2();
+    public void calculateScore(Suit suit){
+
+        _suit = suit;
 
         if(isGwang()){ // 광땡일때
-            player.setScore(20);
+            suit.setScore(20);
         }else if(isJang()){ // 장땡일때
-            player.setScore(21);
+            suit.setScore(21);
         }else if(isDdeng()){ // 땡 일때
-            player.setScore(calculateDdeng(_card1.getNum()));
+            suit.setScore(calculateDdeng(_suit.getFirstCard().getNum()));
         }else{ //끗일때
-            player.setScore((_card1.getNum()+_card2.getNum())%10);
+            suit.setScore((_suit.getFirstCard().getNum()+_suit.getSecondCard().getNum())%10);
         }
     }
     private boolean isGwang(){ // 광땡일 때 true return
-        return _card1.getGwang() && _card2.getGwang();
+        return _suit.getFirstCard().getGwang() && _suit.getSecondCard().getGwang();
     }
     private boolean isJang(){ // 장땡일때 true return
-        return _card1.getNum() == 10 && _card2.getNum() == 10;
+        return _suit.getFirstCard().getNum() == 10 && _suit.getSecondCard().getNum() == 10;
     }
     private boolean isDdeng(){ // 땡일때 true return
-        return _card1.getNum() == _card2.getNum();
+        return _suit.getFirstCard().getNum() == _suit.getSecondCard().getNum();
     }
     private int calculateDdeng(int cardNumber1){ //땡일 때 점수 계산
         return cardNumber1+9;
