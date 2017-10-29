@@ -11,10 +11,6 @@ public class OriginalCardPair extends CardPair{
 
     private OriginalJokbo _score;
 
-    public OriginalJokbo getScore() {
-        return _score;
-    }
-
     private void setScore(OriginalJokbo score) {
         _score = score;
     }

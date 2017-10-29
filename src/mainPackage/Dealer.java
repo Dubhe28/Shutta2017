@@ -52,11 +52,10 @@ class Dealer {
     void pickCardPairs(List<Player> players)   // 딜러가 플레이어 두 명에게 각각 카드를 두 장씩 나누어준다.
     {
         Deck.getInstance().shuffleCards();
-        // 새로 추가된 숫자에 해당하는 카드 두 개를 덱에서 가져와 저장한다.
         players.forEach(this::setPlayerCards);
     }
 
-    private void setPlayerCards(Player player) // 플레이어 내부에 카드 두 장을 저장하는 메소드이다.
+    private void setPlayerCards(Player player)
     {
         player.setCardPair(getRandCardPair());
     }

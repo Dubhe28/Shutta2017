@@ -1,6 +1,6 @@
 package jokboPackage;
 
-public enum OriginalJokbo implements IJokbo{
+public enum OriginalJokbo {
     망통,
     한끗,
     두끗,

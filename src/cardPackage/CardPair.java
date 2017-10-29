@@ -1,7 +1,5 @@
 package cardPackage;
 
-import jokboPackage.IJokbo;
-
 import java.util.Stack;
 
 public class CardPair implements Comparable<CardPair>{
@@ -12,11 +10,6 @@ public class CardPair implements Comparable<CardPair>{
         _cards = new Stack<>();
         _cards.add(card1);
         _cards.add(card2);
-    }
-    private IJokbo _score;
-
-    public IJokbo getScore() {
-        return _score;
     }
 
     Card getFirstCard()

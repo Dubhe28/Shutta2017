@@ -11,10 +11,6 @@ public class TieCardPair extends CardPair{
 
     private TieJokbo _score;
 
-    public TieJokbo getScore() {
-        return _score;
-    }
-
     private void setScore(TieJokbo score) {
         _score = score;
     }

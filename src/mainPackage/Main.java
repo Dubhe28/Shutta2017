@@ -32,7 +32,7 @@ public class Main {
             Dealer.getInstance().returnCardPairsToDeck(players);
         }
 
-        Game.getInstance().printGameRecord(); //한명이 파산할 때 까지의 축적된 결과를 출력
+        Game.getInstance().printGameRecord(); // 게임의 최종 결과와 각 플레이어의 승률 정보를 출력
     }
     // 전 판이 무승부인 경우
     private static boolean judgeTie(Round round){
