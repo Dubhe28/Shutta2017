@@ -1,6 +1,6 @@
-package cardPackage;
+package jokboPackage;
 
-public enum Jokbo {
+public enum OriginalJokbo implements IJokbo{
     망통,
     한끗,
     두끗,

@@ -1,6 +1,8 @@
 package cardPackage;
 
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.Stack;
 
 public class Deck {
@@ -35,8 +37,8 @@ public class Deck {
 
     private boolean isCardGwang(int index)    // 0~19의 숫자를 인자로 받아서 해당 카드가 광인지 아닌지 여부를 반환한다.
     {
-        index++;   // 인자로 받은 숫자로부터 카드 번호를 보다 직관적으로 이해하기 위해 인자로 받은 숫자에 1을 더한다.
-        return index == 1 || index == 3 || index == 8;  // 카드 번호가 1, 3, 8 인 카드 중에 하나씩만 광을 반환한다.
+        List<Integer> list = Arrays.asList(0, 2, 7);
+        return list.stream().anyMatch(integer -> integer == index);
     }
 
     public void shuffleCards()

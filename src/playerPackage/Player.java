@@ -1,18 +1,18 @@
 package playerPackage;
 
-import cardPackage.Suit;
+import cardPackage.CardPair;
 
 public class Player{
 
-    //region Suit suit
-    private Suit suit;
+    //region CardPair cardPair
+    private CardPair cardPair;
 
-    public Suit getSuit() {
-        return suit;
+    public CardPair getCardPair() {
+        return cardPair;
     }
 
-    public void setSuit(Suit suit) {
-        this.suit = suit;
+    public void setCardPair(CardPair cardPair) {
+        this.cardPair = cardPair;
     }
     //endregion
 
@@ -28,7 +28,7 @@ public class Player{
 
     public String getPlayerCardInfo() // 플레이어의 카드 정보를 문자열로 반환하는 메소드.
     {
-        return suit.getFirstCard().getCardInfo()+ " / " + suit.getSecondCard().getCardInfo();
+        return cardPair.getCardsInfo();
     }
 
 }
