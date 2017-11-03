@@ -11,20 +11,16 @@ public class TieCardPair extends CardPair{
 
     private TieJokbo _score;
 
-    private void setScore(TieJokbo score) {
-        _score = score;
-    }
-
     private void setCardScore(){
 
         if(super.isGwang()){ // 광땡일때
-            setScore(TieJokbo.values()[19]);
+            _score = TieJokbo.values()[19];
         }else if(super.isJang()){ // 장땡일때
-            setScore(TieJokbo.values()[20]);
+            _score = TieJokbo.values()[20];
         }else if(super.isDdeng()){ // 땡 일때
-            setScore(TieJokbo.values()[(calculateDdeng(getFirstCard().getNum()))]);
+            _score = TieJokbo.values()[(calculateDdeng(getFirstCard().getNum()))];
         }else{ //끗일때
-            setScore(TieJokbo.values()[((getFirstCard().getNum()+getSecondCard().getNum())%10)]);
+            _score = TieJokbo.values()[((getFirstCard().getNum()+getSecondCard().getNum())%10)];
         }
     }
 
