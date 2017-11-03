@@ -1,5 +1,8 @@
 package mainPackage;
 import cardPackage.*;
+import cardPackage.cardPairPackage.CardPair;
+import cardPackage.cardPairPackage.OriginalCardPair;
+import cardPackage.cardPairPackage.TieCardPair;
 import playerPackage.Player;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package jokboPackage;
+package cardPackage.cardPairPackage;
 
-public enum TieJokbo {
+public enum Jokbo {
     망통,
     한끗,
     두끗,
@@ -20,6 +20,6 @@ public enum TieJokbo {
     칠땡,
     팔땡,
     구땡,
-    광땡,
-    장땡
+    장땡,
+    광땡
 }

@@ -1,6 +1,6 @@
 package playerPackage;
 
-import cardPackage.CardPair;
+import cardPackage.cardPairPackage.CardPair;
 
 public class Player{
 
