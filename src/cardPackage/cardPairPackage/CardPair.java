@@ -4,7 +4,7 @@ import cardPackage.Card;
 
 import java.util.Stack;
 
-abstract public class CardPair implements Comparable<CardPair>{
+public abstract class CardPair implements Comparable<CardPair>{
 
     CardPair(Card card1, Card card2) {
         _cards = new Stack<>();
