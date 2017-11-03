@@ -2,7 +2,7 @@ package cardPackage;
 
 import java.util.Stack;
 
-public class CardPair implements Comparable<CardPair>{
+abstract public class CardPair implements Comparable<CardPair>{
 
     private Stack<Card> _cards;
 
