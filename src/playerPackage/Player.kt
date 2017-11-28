@@ -9,6 +9,6 @@ class Player {
     var money = 1000
 
     val playerCardInfo: String
-        get() = cardPair!!.cardsInfo
+        get() = cardPair!!.getCardsInfo()
 
 }

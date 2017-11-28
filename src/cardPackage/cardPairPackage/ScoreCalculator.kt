@@ -10,15 +10,15 @@ internal object ScoreCalculator {
 
     fun setCardScore(cardPair: CardPair) {
         this.cardPair = cardPair
-        when {
+        cardPair.score = when {
             isGwang() -> // 광땡일때
-                cardPair.score =Jokbo.values()[20]
+                Jokbo.values()[20]
             isJang() -> // 장땡일때
-                cardPair.score = Jokbo.values()[19]
+                Jokbo.values()[19]
             isDdeng() -> // 땡 일때
-                cardPair.score = Jokbo.values()[calculateDdeng(cardPair.firstCard.num)]
+                Jokbo.values()[calculateDdeng(cardPair.firstCard.num)]
             else -> //끗일때
-                cardPair.score = Jokbo.values()[(cardPair.firstCard.num + cardPair.secondCard.num) % 10]
+                Jokbo.values()[(cardPair.firstCard.num + cardPair.secondCard.num) % 10]
         }
     }
 

@@ -13,15 +13,13 @@ internal class Round {
 
     fun setWinner(players: List<Player>) {
         val comparison = players[0].cardPair!!.compareTo(players[1].cardPair!!)
-        if (comparison > 0)
-            winner = Winner.PlayerA
-        else if (comparison < 0)
-            winner = Winner.PlayerB
-        else
-            winner = Winner.None
+        winner = when {
+            comparison > 0 -> Winner.PlayerA
+            comparison < 0 -> Winner.PlayerB
+            else -> Winner.None
+        }
     }
 
-    //endregion
     fun printRound(players: List<Player>) {
         println("************************* " + roundNum + "번째 게임입니다 *************************")
         println("배팅액 : " + Dealer.bettingMoney)  // 이번 라운드에 배팅한 금액의 총액을 출력한다.
