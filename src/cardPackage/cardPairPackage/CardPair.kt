@@ -16,7 +16,7 @@ abstract class CardPair internal constructor(card1: Card, card2: Card) : Compara
         get() = _cards[1]
 
     val cardsInfo: String
-        get() = firstCard.cardInfo + " / " + secondCard.cardInfo + " / " + score
+        get() = firstCard.getCardInfo() + " / " + secondCard.getCardInfo() + " / " + score
 
     init {
         _cards.add(card1)
