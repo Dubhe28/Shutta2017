@@ -1,6 +1,6 @@
-package cardPackage.cardPairPackage;
+package cardPackage.cardPairPackage
 
-public enum Jokbo {
+enum class Jokbo {
     망통,
     한끗,
     두끗,
