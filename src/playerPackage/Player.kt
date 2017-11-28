@@ -8,7 +8,6 @@ class Player {
 
     var money = 1000
 
-    val playerCardInfo: String
-        get() = cardPair!!.getCardsInfo()
+    fun getPlayerCardInfo() = cardPair!!.getCardsInfo()
 
 }

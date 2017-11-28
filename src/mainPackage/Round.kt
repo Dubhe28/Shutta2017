@@ -28,9 +28,7 @@ internal class Round {
         println("Winner: " + winner!!)   // 이번 라운드의 승자를 출력한다.(PlayerA, PlayerB, 또는 None(무승부))
     }
 
-    private fun playerInfo(player: Player): String {
-        return player.playerCardInfo + " / 남은금액 : " + player.money // 해당 플레이어가 받은 두 카드와 남은 금액 정보를 출력한다.
-    }
+    private fun playerInfo(player: Player) =  player.getPlayerCardInfo() + " / 남은금액 : " + player.money // 해당 플레이어가 받은 두 카드와 남은 금액 정보를 출력한다.
 
     companion object {
         private var roundNum = 0
