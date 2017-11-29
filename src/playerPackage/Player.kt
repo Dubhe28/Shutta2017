@@ -4,10 +4,10 @@ import cardPackage.cardPairPackage.CardPair
 
 class Player {
 
-    var cardPair: CardPair? = null
+    lateinit var cardPair: CardPair
 
     var money = 1000
 
-    fun getPlayerCardInfo() = cardPair!!.getCardsInfo()
+    fun getPlayerCardInfo() = cardPair.getCardsInfo()
 
 }

@@ -2,11 +2,12 @@ package cardPackage.cardPairPackage
 
 internal object ScoreCalculator {
 
-    private var cardPair: CardPair? = null
+    private lateinit var cardPair: CardPair
 
-    private fun isGwang() = cardPair!!.firstCard.gwang && cardPair!!.secondCard.gwang
-    private fun isJang() = cardPair!!.firstCard.num == 10 && cardPair!!.secondCard.num == 10
-    private fun isDdeng() = cardPair!!.firstCard.num == cardPair!!.secondCard.num
+    private fun isGwang() = cardPair.getFirstCard().gwang && cardPair.getSecondCard().gwang
+    private fun isJang() = cardPair.getFirstCard().num == 10 && cardPair.getSecondCard().num == 10
+    private fun isDdeng() = cardPair.getFirstCard().num == cardPair.getSecondCard().num
+    private fun calculateDdeng(cardNumber: Int) = cardNumber + 9
 
     fun setCardScore(cardPair: CardPair) {
         this.cardPair = cardPair
@@ -16,11 +17,10 @@ internal object ScoreCalculator {
             isJang() -> // 장땡일때
                 Jokbo.values()[19]
             isDdeng() -> // 땡 일때
-                Jokbo.values()[calculateDdeng(cardPair.firstCard.num)]
+                Jokbo.values()[calculateDdeng(cardPair.getFirstCard().num)]
             else -> //끗일때
-                Jokbo.values()[(cardPair.firstCard.num + cardPair.secondCard.num) % 10]
+                Jokbo.values()[(cardPair.getFirstCard().num + cardPair.getSecondCard().num) % 10]
         }
     }
 
-    private fun calculateDdeng(cardNumber: Int) = cardNumber + 9
 }

@@ -7,7 +7,7 @@ internal object Game {
     private val roundList = ArrayList<Round>()   // 각 라운드의 정보를 저장하는 ArrayList<>를 하나 생성한다.
 
     private val finalWinner: Winner
-        get() = roundList[roundList.size - 1].winner!!   // 최종 승자를 마지막 게임의 승자로부터 알아낸다.
+        get() = roundList[roundList.size - 1].winner   // 최종 승자를 마지막 게임의 승자로부터 알아낸다.
 
     fun addGameRecord(round: Round) {
         roundList.add(round)
@@ -25,9 +25,7 @@ internal object Game {
         val count1 = doStatistics(roundList.stream().filter({ this.isWinnerA(it) }).count())
         val count2 = doStatistics(roundList.stream().filter({ this.isWinnerB(it) }).count())
         val tiedStat = 100 - count1 - count2
-        return (" [ Winner: " + finalWinner + " ] (total " + roundList.size
-                + " games) player A : " + count1 + "%, player B : " + count2
-                + "%, Tied : " + tiedStat + "%")
+        return (" [ Winner: $finalWinner ] (total ${roundList.size} games) player A : $count1%, player B : $count2%, Tied : $tiedStat%")
     }
 
     private fun doStatistics(count: Long): Int { // 승수로부터 퍼센트 승률을 계산하여 반환하는 메소드이다.

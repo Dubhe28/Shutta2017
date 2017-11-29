@@ -22,7 +22,7 @@ object Main {
             round.setWinner(players)
 
             //배팅액분배
-            Dealer.attributeMoney(players, round.winner!!)
+            Dealer.attributeMoney(players, round.winner)
 
             isTied = judgeTie(round) // 해당 게임이 무승부인지 판별
             Game.addGameRecord(round) // mainPackage.Game 클레스에 현재 round 결과 저장

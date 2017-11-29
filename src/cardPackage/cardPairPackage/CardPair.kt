@@ -8,14 +8,12 @@ abstract class CardPair internal constructor(card1: Card, card2: Card) : Compara
 
     private val _cards: Stack<Card> = Stack()
 
-    internal var score: Jokbo? = null
+    internal lateinit var score: Jokbo
 
-    internal val firstCard: Card
-        get() = _cards[0]
-    internal val secondCard: Card
-        get() = _cards[1]
+    internal fun getFirstCard() = _cards[0]
+    internal fun getSecondCard() = _cards[1]
 
-    fun getCardsInfo() = firstCard.getCardInfo() + " / " + secondCard.getCardInfo() + " / " + score
+    fun getCardsInfo() = getFirstCard().getCardInfo() + " / " + getSecondCard().getCardInfo() + " / " + score
 
     init {
         _cards.add(card1)
@@ -28,7 +26,7 @@ abstract class CardPair internal constructor(card1: Card, card2: Card) : Compara
     }
 
     override fun compareTo(other: CardPair): Int {
-        return score!!.compareTo(other.score!!)
+        return score.compareTo(other.score)
     }
 
 }
