@@ -17,7 +17,9 @@ object Deck {
 
     private fun getIsCardGwang(index: Int)  =  listOf(1, 3, 8) .contains(index + 1)
 
-    fun getCardFromDeck() = deck.pop()!!
+    fun getCardFromDeck() : Card{
+        return deck.pop()!!
+    }
 
     fun shuffleCards() {
         Collections.shuffle(deck)

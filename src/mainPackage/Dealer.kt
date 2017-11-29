@@ -8,7 +8,7 @@ internal object Dealer{
 
     var bettingMoney = 200
         private set
-    private var isTied: Boolean = false
+    var isTied: Boolean = false
 
     // 각각의 플레이어의 소지금에서 배팅 금액 빼기
     fun betMoney(players: List<Player>) {
@@ -16,7 +16,6 @@ internal object Dealer{
         players.forEach { player -> player.money = player.money - bettingMoney / 2 }
     }
 
-    // 전 판이 무승부인 경우
     private fun judgeBettingMoney(isTied: Boolean) {
         if (isTied)
             bettingMoney *= 2
@@ -59,9 +58,5 @@ internal object Dealer{
         for (i in 0..1) {
             Deck.recoverCard(player.cardPair.returnCard())
         }
-    }
-
-    fun set(isTied: Boolean) {
-        this.isTied = isTied
     }
 }

@@ -10,16 +10,16 @@ abstract class CardPair internal constructor(card1: Card, card2: Card) : Compara
 
     internal lateinit var score: Jokbo
 
-    internal fun getFirstCard() = _cards[0]
-    internal fun getSecondCard() = _cards[1]
-
-    fun getCardsInfo() = getFirstCard().getCardInfo() + " / " + getSecondCard().getCardInfo() + " / " + score
-
     init {
         _cards.add(card1)
         _cards.add(card2)
         ScoreCalculator.setCardScore(this)
     }
+
+    internal fun getFirstCard() = _cards[0]
+    internal fun getSecondCard() = _cards[1]
+
+    fun getCardsInfo() = "${getFirstCard().getCardInfo()} / ${getSecondCard().getCardInfo()} / $score"
 
     fun returnCard(): Card {
         return _cards.pop()
@@ -28,5 +28,4 @@ abstract class CardPair internal constructor(card1: Card, card2: Card) : Compara
     override fun compareTo(other: CardPair): Int {
         return score.compareTo(other.score)
     }
-
 }
