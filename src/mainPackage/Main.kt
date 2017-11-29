@@ -13,21 +13,27 @@ object Main {
         while (isRunning(players)) {
             val round = Round()
 
-            Dealer.isTied = isTied
-            Dealer.betMoney(players)
-            Dealer.pickCardPairs(players)
+            playGame(isTied, players, round)
 
-            round.setWinner(players)
-            Dealer.attributeMoney(players, round.winner)
-
-            round.printRound(players)
-            Game.addGameRecord(round)
-
-            Dealer.returnCardPairsToDeck(players)
             isTied = judgeTie(round)
         }
 
         Game.printGameRecord()
+    }
+
+    private fun playGame(isTied: Boolean, players: List<Player>, round: Round) {
+        Dealer.isTied = isTied
+        Dealer.betMoney(players)
+
+        Dealer.pickCardPairs(players)
+
+        round.setWinner(players)
+        Dealer.attributeMoney(players, round.winner)
+
+        round.printRound(players)
+
+        Dealer.returnCardPairsToDeck(players)
+        Game.addGameRecord(round)
     }
 
     private fun judgeTie(round: Round) = round.winner == Winner.None
