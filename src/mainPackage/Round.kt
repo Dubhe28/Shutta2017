@@ -5,7 +5,6 @@ import playerPackage.Player
 internal class Round {
 
     lateinit var winner: Winner
-        private set
 
     init {
         roundNum++
